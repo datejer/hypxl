@@ -1,0 +1,9 @@
+.username {
+	text-shadow: 8px 8px #00000055;
+	font-size: 64px;
+	font-family: Minecraftia;
+}
+
+.bust {
+	filter: drop-shadow(0 0 10px #000000);
+}
