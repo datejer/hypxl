@@ -21,7 +21,13 @@ function User() {
 		}
 	}, [router.query.user]);
 
-	if (!user) return null;
+	if (!user)
+		return (
+			<SEO
+				title={router.query.user}
+				description={`View ${router.query.user}'s stats.`}
+			/>
+		);
 
 	return (
 		<div>
