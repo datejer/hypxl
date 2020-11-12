@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
+import SEO from "../components/seo";
 import { getHtmlFormat } from "../utils/format";
+
 import styles from "../styles/User.module.css";
 
 function User() {
@@ -24,13 +25,12 @@ function User() {
 
 	return (
 		<div>
-			<Head>
-				<title>{user.username}</title>
-				<link
-					rel="icon"
-					href={`https://visage.surgeplay.com/face/${user.uuid}`}
-				/>
-			</Head>
+			<SEO
+				title={user.username}
+				description={`View ${user.username}'s stats.`}
+				favicon={`https://visage.surgeplay.com/face/8/${user.uuid}`}
+				ogimg={`https://visage.surgeplay.com/bust/${user.uuid}`}
+			/>
 			<img
 				src={`https://visage.surgeplay.com/bust/${user.uuid}`}
 				className={styles.bust}
