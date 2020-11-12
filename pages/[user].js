@@ -1,33 +1,24 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import SEO from "../components/seo";
 import { getHtmlFormat } from "../utils/format";
 
 import styles from "../styles/User.module.css";
 
-function User() {
-	const router = useRouter();
+function User({ username }) {
 	const [user, setUser] = useState(null);
 
 	useEffect(async () => {
-		if (router.query.user) {
-			const res = await fetch(
-				`https://api.slothpixel.me/api/players/${router.query.user}`
-			);
+		const res = await fetch(
+			`https://api.slothpixel.me/api/players/${username}`
+		);
 
-			const data = await res.json();
+		const data = await res.json();
 
-			setUser(data);
-		}
-	}, [router.query.user]);
+		setUser(data);
+	}, []);
 
 	if (!user)
-		return (
-			<SEO
-				title={router.query.user}
-				description={`View ${router.query.user}'s stats.`}
-			/>
-		);
+		return <SEO title={username} description={`View ${username}'s stats.`} />;
 
 	return (
 		<div>
@@ -46,6 +37,11 @@ function User() {
 			</h1>
 		</div>
 	);
+}
+
+export async function getServerSideProps(ctx) {
+	const username = ctx.query.user;
+	return { props: { username } };
 }
 
 export default User;
