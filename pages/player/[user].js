@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import SEO from "../components/seo";
-import { getHtmlFormat } from "../utils/format";
+import SEO from "../../components/seo";
+import { getHtmlFormat } from "../../utils/format";
 
-import styles from "../styles/User.module.css";
+import styles from "../../styles/User.module.css";
 
 function User({ username }) {
 	const [user, setUser] = useState(null);
@@ -18,7 +18,14 @@ function User({ username }) {
 	}, []);
 
 	if (!user)
-		return <SEO title={username} description={`View ${username}'s stats.`} />;
+		return (
+			<SEO
+				title={username}
+				description={`View ${username}'s stats.`}
+				favicon={`https://minotar.net/avatar/${username}/100.png`}
+				ogimg={`https://minotar.net/bust/${username}/100.png`}
+			/>
+		);
 
 	return (
 		<div>

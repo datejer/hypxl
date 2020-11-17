@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import SEO from "../components/seo";
-import styles from "../styles/Home.module.css";
+import SEO from "../../components/seo";
+import Layout from "../../components/layout";
+import styles from "../../styles/Home.module.css";
 
 export default function Home() {
 	const [username, setUsername] = useState();
@@ -9,12 +10,12 @@ export default function Home() {
 
 	const handleKeyDown = (event) => {
 		if (event.key === "Enter") {
-			router.push("/" + username);
+			router.push("/player/" + username);
 		}
 	};
 
 	return (
-		<div>
+		<Layout>
 			<SEO />
 			<input
 				placeholder="Enter username..."
@@ -24,6 +25,6 @@ export default function Home() {
 				}}
 				onKeyDown={handleKeyDown}
 			/>
-		</div>
+		</Layout>
 	);
 }
