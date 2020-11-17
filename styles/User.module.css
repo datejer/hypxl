@@ -1,9 +1,69 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+}
+
 .username {
-	text-shadow: 8px 8px #00000022;
-	font-size: 64px;
+	text-shadow: 3px 3px #00000022;
+	font-size: 24px;
 	font-family: Minecraftia;
+	margin-bottom: 0;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 24px;
+}
+
+.indicator {
+	display: inline-block;
+	width: 0.5em;
+	height: 0.5em;
+	margin-left: 1em;
+	border-radius: 50%;
+	vertical-align: middle;
 }
 
 .bust {
-	filter: drop-shadow(0 0 10px #000000);
+	display: inline-block;
+	vertical-align: middle;
+	height: 5em;
+	margin-right: 1em;
+}
+
+.user {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+
+.stats {
+	background: #fff;
+	box-shadow: 0 0 10px #00000022;
+	flex: 1;
+	margin: 0 1em 2em 2em;
+	border-radius: 6px;
+	padding: 2em;
+}
+
+.games {
+	flex: 2;
+	margin: 0 2em 2em 1em;
+	background: #fff;
+	box-shadow: 0 0 10px #00000022;
+	border-radius: 6px;
+	padding: 2em;
+}
+
+.player {
+	margin-bottom: 1em;
+}
+
+.info {
+	font-size: 1.25em;
+}
+
+.bold {
+	font-weight: 700;
 }

@@ -21,7 +21,7 @@ export default function Home() {
 				<input
 					placeholder="Enter username..."
 					name="username"
-					autocomplete="off"
+					autoComplete="off"
 					onChange={(event) => {
 						setUsername(event.target.value);
 					}}
