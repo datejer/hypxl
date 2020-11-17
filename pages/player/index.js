@@ -16,15 +16,19 @@ export default function Home() {
 
 	return (
 		<Layout>
-			<SEO />
-			<input
-				placeholder="Enter username..."
-				name="username"
-				onChange={(event) => {
-					setUsername(event.target.value);
-				}}
-				onKeyDown={handleKeyDown}
-			/>
+			<div className={styles.container}>
+				<SEO />
+				<input
+					placeholder="Enter username..."
+					name="username"
+					autocomplete="off"
+					onChange={(event) => {
+						setUsername(event.target.value);
+					}}
+					onKeyDown={handleKeyDown}
+					className={styles.input}
+				/>
+			</div>
 		</Layout>
 	);
 }

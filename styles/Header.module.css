@@ -1,7 +1,6 @@
 .wrapper {
-	padding-top: 3em;
-	padding-bottom: 5em;
-	background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+	padding-top: 2em;
+	padding-bottom: 4em;
 	display: flex;
 	justify-content: center;
 	align-self: center;
@@ -9,21 +8,25 @@
 
 .container {
 	background: #fff;
-	padding: 1em 2em;
+	padding: 0.75em 2.25em;
 	border-radius: 6px;
 	box-shadow: 0 5px 10px #00000022;
 }
 
 .container > a {
-	margin-right: 2em;
+	margin-right: 1.5em;
 	border-radius: 5px;
-	padding: 0.5em;
+	padding: 0.75em;
 	transition: all 0.1s ease;
 	display: inline-block;
 }
 
 .container > a:last-child {
 	margin-right: 0;
+}
+
+.container > a:first-child {
+	padding: 0.5em;
 }
 
 .container > a:hover {
