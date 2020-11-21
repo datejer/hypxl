@@ -21,16 +21,20 @@ function User({ username }) {
 
 	if (!user)
 		return (
-			<SEO
-				title={username}
-				description={`View ${username}'s stats.`}
-				favicon={`https://minotar.net/avatar/${username}/100.png`}
-				ogimg={`https://minotar.net/bust/${username}/100.png`}
-			/>
+			<Layout current="player">
+				<div className={styles.container}>
+					<SEO
+						title={username}
+						description={`View ${username}'s stats.`}
+						favicon={`https://minotar.net/avatar/${username}/100.png`}
+						ogimg={`https://minotar.net/bust/${username}/100.png`}
+					/>
+				</div>
+			</Layout>
 		);
 
 	return (
-		<Layout>
+		<Layout current="player">
 			<div className={styles.container}>
 				<SEO
 					title={user.username}

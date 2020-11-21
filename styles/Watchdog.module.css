@@ -7,39 +7,13 @@
 	flex: 1;
 }
 
-.username {
-	text-shadow: 3px 3px #00000022;
-	font-size: 24px;
-	font-family: Minecraftia;
-	margin-bottom: 0;
-	display: inline-block;
-	vertical-align: middle;
-	line-height: 24px;
-}
-
-.indicator {
-	display: inline-block;
-	width: 0.5em;
-	height: 0.5em;
-	margin-left: 1em;
-	border-radius: 50%;
-	vertical-align: middle;
-}
-
-.bust {
-	display: inline-block;
-	vertical-align: middle;
-	height: 5em;
-	margin-right: 1em;
-}
-
-.user {
+.stats {
 	height: 100%;
 	width: 100%;
 	display: flex;
 }
 
-.stats {
+.watchdog {
 	background: #fff;
 	box-shadow: 0 0 10px #00000022;
 	flex: 1;
@@ -49,8 +23,8 @@
 	height: fit-content;
 }
 
-.games {
-	flex: 2;
+.staff {
+	flex: 1;
 	margin: 0 2em 2em 1em;
 	background: #fff;
 	box-shadow: 0 0 10px #00000022;
@@ -59,14 +33,33 @@
 	height: fit-content;
 }
 
-.player {
+.title {
+	text-shadow: 6px 6px #00000022;
+	font-size: 48px;
+	font-family: Minecraftia;
+	margin-bottom: 0;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 48px;
 	margin-bottom: 1em;
 }
 
 .info {
-	font-size: 1.25em;
+	font-size: 1.5em;
 }
 
 .bold {
 	font-weight: 700;
+}
+
+@media only screen and (max-width: 1100px) {
+	.stats {
+		flex-direction: column;
+	}
+	.watchdog {
+		margin: 0 1em 1em 1em;
+	}
+	.staff {
+		margin: 0 1em 1em 1em;
+	}
 }

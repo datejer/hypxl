@@ -15,7 +15,7 @@ export default function Home() {
 	};
 
 	return (
-		<Layout>
+		<Layout current="player">
 			<div className={styles.container}>
 				<SEO />
 				<input
