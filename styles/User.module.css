@@ -70,3 +70,21 @@
 .bold {
 	font-weight: 700;
 }
+
+.socials {
+	margin-top: 1em;
+	display: flex;
+	flex-direction: row;
+}
+
+.sociallink {
+	margin-right: 0.5em;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+}
+
+.socialimg {
+	width: 100%;
+}

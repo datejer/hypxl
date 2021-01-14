@@ -3,6 +3,7 @@ import SEO from "../../components/seo";
 import Layout from "../../components/layout";
 import { getHtmlFormat } from "../../utils/format";
 import { getCoinMultiplier } from "../../utils/multiplier";
+import Socials from "../../components/player/socials";
 
 import styles from "../../styles/User.module.css";
 
@@ -94,6 +95,7 @@ function User({ username }) {
 								{user.last_game}
 							</div>
 						</div>
+						<Socials player={user} />
 					</div>
 					<div className={styles.games}>HELO</div>
 				</div>
