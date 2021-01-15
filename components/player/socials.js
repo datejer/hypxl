@@ -1,3 +1,4 @@
+import { Tooltip } from "react-tippy";
 import styles from "../../styles/User.module.css";
 
 export default function Socials({ player }) {
@@ -32,12 +33,17 @@ export default function Socials({ player }) {
 				""
 			)}
 			{player.links.DISCORD ? (
-				<a
-					href={`https://discordprofile.gq/${player.links.DISCORD}`}
-					className={styles.sociallink}
+				<Tooltip
+					title={player.links.DISCORD}
+					animation="shift"
+					animateFill={false}
+					arrow="true"
+					style={{ cursor: "pointer" }}
 				>
-					<img src="/discord.svg" className={styles.socialimg} />
-				</a>
+					<a className={styles.sociallink}>
+						<img src="/discord.svg" className={styles.socialimg} />
+					</a>
+				</Tooltip>
 			) : (
 				""
 			)}

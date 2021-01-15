@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Tooltip } from "react-tippy";
 import SEO from "../../components/seo";
 import Layout from "../../components/layout";
 import { getHtmlFormat } from "../../utils/format";
@@ -51,15 +52,24 @@ function User({ username }) {
 								src={`https://visage.surgeplay.com/bust/${user.uuid}`}
 								className={styles.bust}
 							/>
-							<h1 className={styles.username}>
-								{getHtmlFormat(`${user.rank_formatted} ${user.username}`)}
-							</h1>
-							<span
-								className={styles.indicator}
-								style={{
-									backgroundColor: user.online ? "lightgreen" : "orangered",
-								}}
-							></span>
+							<Tooltip title={user.uuid} animation="shift" animateFill={false}>
+								<h1 className={styles.username}>
+									{getHtmlFormat(`${user.rank_formatted} ${user.username}`)}
+								</h1>
+							</Tooltip>
+							<Tooltip
+								title={user.online ? "Online" : "Offline"}
+								animation="shift"
+								animateFill={false}
+								arrow="true"
+							>
+								<span
+									className={styles.indicator}
+									style={{
+										backgroundColor: user.online ? "lightgreen" : "orangered",
+									}}
+								></span>
+							</Tooltip>
 						</div>
 						<div className={styles.info}>
 							<div>
@@ -91,8 +101,30 @@ function User({ username }) {
 								{new Date(user.last_login).toLocaleString()}
 							</div>
 							<div>
+								<span className={styles.bold}>Last logout: </span>{" "}
+								{new Date(user.last_logout).toLocaleString()}
+							</div>
+							<div>
 								<span className={styles.bold}>Last game: </span>{" "}
 								{user.last_game}
+							</div>
+							<br />
+							<div>
+								<span className={styles.bold}>Gifts sent: </span>{" "}
+								{user.gifts_sent}
+							</div>
+							<div>
+								<span className={styles.bold}>Gifts received: </span>{" "}
+								{user.gifts_received}
+							</div>
+							<br />
+							<div>
+								<span className={styles.bold}>Current reward streak: </span>{" "}
+								{user.rewards.streak_current}
+							</div>
+							<div>
+								<span className={styles.bold}>Best reward streak: </span>{" "}
+								{user.rewards.streak_best}
 							</div>
 						</div>
 						<Socials player={user} />
