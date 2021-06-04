@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout/layout';
+import Layout from '../../components/Layout/Layout';
 import PlayerPage from '../../components/PlayerPage/PlayerPage';
 
 function Player({ username }) {
