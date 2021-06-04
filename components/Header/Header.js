@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
 import styles from './Header.module.scss';
 
 export default function Header({ current }) {
@@ -6,8 +8,8 @@ export default function Header({ current }) {
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
 				<Link href="/">
-					<a>
-						<img src="/logo.png" className={styles.logo} />
+					<a className={styles.logo}>
+						<Image src="/logo.png" alt="Hypxl" width={48} height={48} />
 					</a>
 				</Link>
 				<Link href="/player">

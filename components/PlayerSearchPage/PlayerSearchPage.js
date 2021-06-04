@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import SEO from '../seo';
+import SEO from '../SEO';
 
 import styles from './PlayerSearchPage.module.scss';
 
