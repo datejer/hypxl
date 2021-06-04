@@ -1,5 +1,5 @@
-import Link from "next/link";
-import styles from "../styles/Header.module.css";
+import Link from 'next/link';
+import styles from './Header.module.scss';
 
 export default function Header({ current }) {
 	return (
@@ -11,7 +11,7 @@ export default function Header({ current }) {
 					</a>
 				</Link>
 				<Link href="/player">
-					<a style={{ fontWeight: current === "player" ? 700 : 400 }}>Player</a>
+					<a style={{ fontWeight: current === 'player' ? 700 : 400 }}>Player</a>
 				</Link>
 				<Link href="/guild">
 					<a>Guild</a>
@@ -23,7 +23,7 @@ export default function Header({ current }) {
 					<a>Boosters</a>
 				</Link>
 				<Link href="/watchdog">
-					<a style={{ fontWeight: current === "watchdog" ? 700 : 400 }}>
+					<a style={{ fontWeight: current === 'watchdog' ? 700 : 400 }}>
 						Watchdog
 					</a>
 				</Link>

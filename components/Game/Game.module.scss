@@ -1,0 +1,23 @@
+.game {
+	margin-bottom: 1em;
+	background: #fff;
+	box-shadow: 0 0 10px #00000022;
+	border-radius: 6px;
+	padding: 2em;
+	height: fit-content;
+
+	.gameCollapse {
+		height: 1em;
+		vertical-align: middle;
+		margin-right: 0.5em;
+	}
+
+	.name {
+		display: inline;
+		vertical-align: middle;
+	}
+
+	.contents {
+		margin-top: 1em;
+	}
+}

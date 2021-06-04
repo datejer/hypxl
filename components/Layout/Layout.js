@@ -1,5 +1,5 @@
-import Header from "../components/header";
-import styles from "../styles/Layout.module.css";
+import Header from '../Header/Header';
+import styles from './Layout.module.scss';
 
 export default function Layout({ children, current }) {
 	return (
