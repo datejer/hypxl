@@ -18,19 +18,21 @@ export default function Stats({ player }) {
 						{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}
 					</h1>
 				</Tooltip>
-				<Tooltip
-					title={player.online ? 'Online' : 'Offline'}
-					animation="shift"
-					animateFill={false}
-					arrow="true"
-				>
-					<span
-						className={styles.indicator}
-						style={{
-							backgroundColor: player.online ? 'lightgreen' : 'orangered',
-						}}
-					></span>
-				</Tooltip>
+				<span style={{ marginLeft: '1em' }}>
+					<Tooltip
+						title={player.online ? 'Online' : 'Offline'}
+						animation="shift"
+						animateFill={false}
+						arrow="true"
+					>
+						<span
+							className={styles.indicator}
+							style={{
+								backgroundColor: player.online ? 'lightgreen' : 'orangered',
+							}}
+						></span>
+					</Tooltip>
+				</span>
 			</div>
 			<div className={styles.info}>
 				<div>
@@ -42,7 +44,17 @@ export default function Stats({ player }) {
 					{getCoinMultiplier(Math.floor(player.level))}x
 				</div>
 				<div>
-					<span className={styles.bold}>Experience: </span> {player.exp}
+					<span className={styles.bold}>Experience: </span>{' '}
+					{player.exp
+						.toString()
+						.split('')
+						.reverse()
+						.join('')
+						.match(/.{1,3}/g)
+						.join(' ')
+						.split('')
+						.reverse()
+						.join('')}
 				</div>
 				<div>
 					<span className={styles.bold}>Achievement points: </span>{' '}
