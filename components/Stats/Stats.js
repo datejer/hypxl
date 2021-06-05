@@ -9,10 +9,40 @@ export default function Stats({ player }) {
 	return (
 		<div className={styles.stats}>
 			<div className={styles.player}>
-				<img
-					src={`https://visage.surgeplay.com/bust/${player.uuid}`}
-					className={styles.bust}
-				/>
+				<span
+					className={`${styles.avatar} ${
+						player.rank === null
+							? styles.non
+							: player.rank === 'VIP'
+							? styles.vip
+							: player.rank === 'VIP_PLUS'
+							? styles.vipPlus
+							: player.rank === 'MVP'
+							? styles.mvp
+							: player.rank === 'MVP_PLUS'
+							? styles.mvpPlus
+							: player.rank === 'MVP_PLUS_PLUS'
+							? styles.mvpPlusPlus
+							: player.rank === 'YOUTUBER'
+							? styles.youtuber
+							: player.rank === 'HELPER'
+							? styles.helper
+							: player.rank === 'MODERATOR'
+							? styles.moderator
+							: player.rank === 'BUILD_TEAM'
+							? styles.buildTeam
+							: player.rank === 'GAME_MASTER'
+							? styles.gameMaster
+							: player.rank === 'ADMIN'
+							? styles.admin
+							: ''
+					}`}
+				>
+					<img
+						src={`https://visage.surgeplay.com/bust/${player.uuid}`}
+						className={styles.bust}
+					/>
+				</span>
 				<Tooltip title={player.uuid} animation="shift" animateFill={false}>
 					<h1 className={styles.username}>
 						{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}

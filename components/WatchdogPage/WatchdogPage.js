@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SEO from '../../components/seo';
+import SEO from '../../components/SEO';
 import { getHtmlFormat } from '../../utils/format';
 
 import styles from './WatchdogPage.module.scss';

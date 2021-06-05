@@ -9,14 +9,38 @@
 }
 
 .player {
+	display: flex;
+	height: 135px;
 	margin-bottom: 1em;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .bust {
 	display: inline-block;
 	vertical-align: middle;
-	height: 5em;
-	margin-right: 1em;
+	height: 90px;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+
+.avatar {
+	display: inline-block;
+	position: relative;
+	margin-right: 2em;
+	height: 125px;
+
+	&:after {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: '';
+		width: 135px;
+		height: 135px;
+		background-repeat: no-repeat;
+	}
 }
 
 .username {
@@ -44,4 +68,50 @@
 
 .bold {
 	font-weight: 700;
+}
+
+// RANK FRAMES
+
+.vip::after {
+	background-image: url(/frames/vip.png);
+}
+
+.vipPlus::after {
+	background-image: url(/frames/vip-plus.png);
+}
+
+.mvp::after {
+	background-image: url(/frames/mvp.png);
+}
+
+.mvpPlus::after {
+	background-image: url(/frames/mvp-plus.png);
+}
+
+.mvpPlusPlus::after {
+	background-image: url(/frames/mvp-plus-plus.png);
+}
+
+.youtuber::after {
+	background-image: url(/frames/youtuber.png);
+}
+
+.helper::after {
+	background-image: url(/frames/helper.png);
+}
+
+.moderator::after {
+	background-image: url(/frames/moderator.png);
+}
+
+.buildTeam::after {
+	background-image: url(/frames/build-team.png);
+}
+
+.gameMaster::after {
+	background-image: url(/frames/gamemaster.png);
+}
+
+.admin::after {
+	background-image: url(/frames/admin.png);
 }
