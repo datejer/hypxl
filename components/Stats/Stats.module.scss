@@ -72,6 +72,16 @@
 
 // RANK FRAMES
 
+.non {
+	height: 135px;
+	margin-right: 1em;
+
+	img {
+		height: 135px;
+		margin: 0;
+	}
+}
+
 .vip::after {
 	background-image: url(/frames/vip.png);
 }
