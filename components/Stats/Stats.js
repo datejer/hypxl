@@ -128,7 +128,11 @@ export default function Stats({ player }) {
 					{player.rewards.streak_best}
 				</div>
 			</div>
-			<Socials player={player} />
+			{Object.values(player.links).every((x) => x === null) ? (
+				''
+			) : (
+				<Socials player={player} />
+			)}
 		</div>
 	);
 }

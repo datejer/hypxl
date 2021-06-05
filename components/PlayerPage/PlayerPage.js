@@ -15,8 +15,6 @@ function PlayerPage({ username }) {
 
 		const data = await res.json();
 
-		console.log(data);
-
 		setPlayer(data);
 	}, []);
 
