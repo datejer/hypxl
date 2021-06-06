@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useToasts } from 'react-toast-notifications';
+import { useRouter } from 'next/router';
 import SEO from '../SEO';
 import Stats from '../Stats/Stats';
 import Games from '../Games/Games';
@@ -7,6 +9,8 @@ import styles from './PlayerPage.module.scss';
 
 function PlayerPage({ username }) {
 	const [player, setPlayer] = useState(null);
+	const { addToast } = useToasts();
+	const router = useRouter();
 
 	useEffect(async () => {
 		const res = await fetch(
@@ -15,7 +19,10 @@ function PlayerPage({ username }) {
 
 		const data = await res.json();
 
-		setPlayer(data);
+		if (data.error) {
+			router.push('/');
+			addToast(data.error, { autoDismiss: true, appearance: 'error' });
+		} else setPlayer(data);
 	}, []);
 
 	if (!player)
