@@ -2,9 +2,12 @@ module.exports = {
 	async rewrites() {
 		return [
 			{
-				source: "/",
-				destination: "/player",
+				source: '/',
+				destination: '/player',
 			},
 		];
+	},
+	images: {
+		domains: ['visage.surgeplay.com'],
 	},
 };

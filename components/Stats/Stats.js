@@ -1,4 +1,5 @@
 import { Tooltip } from 'react-tippy';
+import Image from 'next/image';
 import { getHtmlFormat, formatBigNumber } from '../../utils/format';
 import { getCoinMultiplier } from '../../utils/multiplier';
 import Socials from '../Socials/Socials';
@@ -38,10 +39,18 @@ export default function Stats({ player }) {
 							: ''
 					}`}
 				>
-					<img
+					{/* <img
 						src={`https://visage.surgeplay.com/bust/${player.uuid}`}
 						className={styles.bust}
-					/>
+					/> */}
+					<div className={styles.bust}>
+						<Image
+							src={`https://visage.surgeplay.com/bust/${player.uuid}`}
+							alt={player.username}
+							width={90}
+							height={90}
+						/>
+					</div>
 				</span>
 				<Tooltip title={player.uuid} animation="shift" animateFill={false}>
 					<h1 className={styles.username}>
