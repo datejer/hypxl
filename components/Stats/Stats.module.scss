@@ -6,6 +6,10 @@
 	border-radius: 6px;
 	padding: 2em;
 	height: fit-content;
+
+	@media screen and (max-width: 1080px) {
+		margin: 0 2em 2em 2em;
+	}
 }
 
 .player {
@@ -24,6 +28,8 @@
 	margin-left: 25px;
 	margin-top: 15px;
 	filter: drop-shadow(0 0 4px #000);
+	height: 90px;
+	width: 90px;
 }
 
 .avatar {
@@ -75,16 +81,18 @@
 
 .non {
 	height: 90px;
+	width: 90px;
 	margin-right: 1em;
 
 	.bust {
 		height: 90px;
+		width: 90px;
 		margin: 0;
 	}
 
 	&:after {
-		width: 90px;
 		height: 90px;
+		width: 90px;
 	}
 }
 
