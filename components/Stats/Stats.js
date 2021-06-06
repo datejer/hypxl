@@ -9,7 +9,10 @@ import styles from './Stats.module.scss';
 export default function Stats({ player }) {
 	return (
 		<div className={styles.stats}>
-			<div className={styles.player}>
+			<div
+				className={styles.player}
+				style={player.rank === null ? { height: '90px' } : {}}
+			>
 				<span
 					className={`${styles.avatar} ${
 						player.rank === null
