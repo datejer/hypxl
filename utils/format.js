@@ -1,63 +1,63 @@
-const getHexCode = (color) => {
+const getHexCode = color => {
 	switch (color) {
-		case "&4":
-			return "#aa0000";
+		case '&4':
+			return '#aa0000';
 			break;
-		case "&c":
-			return "#ff5555";
+		case '&c':
+			return '#ff5555';
 			break;
-		case "&6":
-			return "#ffaa00";
+		case '&6':
+			return '#ffaa00';
 			break;
-		case "&e":
-			return "#ffff55";
+		case '&e':
+			return '#ffff55';
 			break;
-		case "&2":
-			return "#00aa00";
+		case '&2':
+			return '#00aa00';
 			break;
-		case "&a":
-			return "#55ff55";
+		case '&a':
+			return '#55ff55';
 			break;
-		case "&b":
-			return "#55ffff";
+		case '&b':
+			return '#55ffff';
 			break;
-		case "&3":
-			return "#00aaaa";
+		case '&3':
+			return '#00aaaa';
 			break;
-		case "&1":
-			return "#0000aa";
+		case '&1':
+			return '#0000aa';
 			break;
-		case "&9":
-			return "#5555ff";
+		case '&9':
+			return '#5555ff';
 			break;
-		case "&d":
-			return "#ff55ff";
+		case '&d':
+			return '#ff55ff';
 			break;
-		case "&5":
-			return "#aa00aa";
+		case '&5':
+			return '#aa00aa';
 			break;
-		case "&f":
-			return "#ffffff";
+		case '&f':
+			return '#ffffff';
 			break;
-		case "&7":
-			return "#aaaaaa";
+		case '&7':
+			return '#aaaaaa';
 			break;
-		case "&8":
-			return "#555555";
+		case '&8':
+			return '#555555';
 			break;
-		case "&0":
-			return "#000000";
+		case '&0':
+			return '#000000';
 			break;
 	}
 };
 
-const getHtmlFormat = (string) => {
+const getHtmlFormat = string => {
 	let output = [];
 
-	string.split("&").map((el) => {
+	string.split('&').map(el => {
 		if (el) {
 			return output.push(
-				<span key={"&" + el} style={{ color: getHexCode(`&${el.charAt(0)}`) }}>
+				<span key={'&' + el} style={{ color: getHexCode(`&${el.charAt(0)}`) }}>
 					{el.substring(1)}
 				</span>
 			);
@@ -67,4 +67,17 @@ const getHtmlFormat = (string) => {
 	return output;
 };
 
-export { getHexCode, getHtmlFormat };
+const formatBigNumber = number => {
+	return number
+		.toString()
+		.split('')
+		.reverse()
+		.join('')
+		.match(/.{1,3}/g)
+		.join(',')
+		.split('')
+		.reverse()
+		.join('');
+};
+
+export { getHexCode, getHtmlFormat, formatBigNumber };

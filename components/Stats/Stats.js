@@ -1,5 +1,5 @@
 import { Tooltip } from 'react-tippy';
-import { getHtmlFormat } from '../../utils/format';
+import { getHtmlFormat, formatBigNumber } from '../../utils/format';
 import { getCoinMultiplier } from '../../utils/multiplier';
 import Socials from '../Socials/Socials';
 
@@ -66,8 +66,7 @@ export default function Stats({ player }) {
 			</div>
 			<div className={styles.info}>
 				<div>
-					<span className={styles.bold}>Level: </span>{' '}
-					{Math.floor(player.level)}
+					<span className={styles.bold}>Level: </span> {player.level}
 				</div>
 				<div>
 					<span className={styles.bold}>Coin multiplier: </span>{' '}
@@ -75,41 +74,52 @@ export default function Stats({ player }) {
 				</div>
 				<div>
 					<span className={styles.bold}>Experience: </span>{' '}
-					{player.exp
-						.toString()
-						.split('')
-						.reverse()
-						.join('')
-						.match(/.{1,3}/g)
-						.join(' ')
-						.split('')
-						.reverse()
-						.join('')}
+					{formatBigNumber(player.exp)}
+				</div>
+				<div>
+					<span className={styles.bold}>Karma: </span>{' '}
+					{formatBigNumber(player.karma)}
 				</div>
 				<div>
 					<span className={styles.bold}>Achievement points: </span>{' '}
-					{player.achievement_points}
+					{formatBigNumber(player.achievement_points)}
 				</div>
 				<div>
 					<span className={styles.bold}>Quests completed: </span>{' '}
-					{player.quests_completed}
+					{formatBigNumber(player.quests_completed)}
 				</div>
 				<br />
-				<div>
-					<span className={styles.bold}>First login: </span>{' '}
-					{new Date(player.first_login).toLocaleString()}
-				</div>
-				<div>
-					<span className={styles.bold}>Last login: </span>{' '}
-					{new Date(player.last_login).toLocaleString()}
-				</div>
-				<div>
-					<span className={styles.bold}>Last logout: </span>{' '}
-					{new Date(player.last_logout).toLocaleString()}
-				</div>
-				<div>
-					<span className={styles.bold}>Last game: </span> {player.last_game}
-				</div>
+				{player.first_login !== null ? (
+					<div>
+						<span className={styles.bold}>First login: </span>{' '}
+						{new Date(player.first_login).toLocaleString()}
+					</div>
+				) : (
+					''
+				)}
+				{player.last_login !== null ? (
+					<div>
+						<span className={styles.bold}>Last login: </span>{' '}
+						{new Date(player.last_login).toLocaleString()}
+					</div>
+				) : (
+					''
+				)}
+				{player.last_logout !== null ? (
+					<div>
+						<span className={styles.bold}>Last logout: </span>{' '}
+						{new Date(player.last_logout).toLocaleString()}
+					</div>
+				) : (
+					''
+				)}
+				{player.last_logout !== null ? (
+					<div>
+						<span className={styles.bold}>Last game: </span> {player.last_game}
+					</div>
+				) : (
+					''
+				)}
 				<br />
 				<div>
 					<span className={styles.bold}>Gifts sent: </span> {player.gifts_sent}
@@ -128,7 +138,7 @@ export default function Stats({ player }) {
 					{player.rewards.streak_best}
 				</div>
 			</div>
-			{Object.values(player.links).every((x) => x === null) ? (
+			{Object.values(player.links).every(x => x === null) ? (
 				''
 			) : (
 				<Socials player={player} />
