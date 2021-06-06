@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import SEO from '../../components/SEO';
+import SEO from '../SEO';
 import { getHtmlFormat } from '../../utils/format';
 
-import styles from './WatchdogPage.module.scss';
+import styles from './BansPage.module.scss';
 
-function WatchdogPage() {
+function BansPage() {
 	const [stats, setStats] = useState({});
 
 	useEffect(async () => {
@@ -18,7 +18,7 @@ function WatchdogPage() {
 	return (
 		<div className={styles.container}>
 			<SEO
-				title="Watchdog Stats"
+				title="Ban Stats"
 				description={`View player ban statistics across the network.`}
 			/>
 
@@ -58,4 +58,4 @@ function WatchdogPage() {
 	);
 }
 
-export default WatchdogPage;
+export default BansPage;

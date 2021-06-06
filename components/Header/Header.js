@@ -24,10 +24,8 @@ export default function Header({ current }) {
 				<Link href="/boosters">
 					<a>Boosters</a>
 				</Link>
-				<Link href="/watchdog">
-					<a style={{ fontWeight: current === 'watchdog' ? 700 : 400 }}>
-						Watchdog
-					</a>
+				<Link href="/bans">
+					<a style={{ fontWeight: current === 'bans' ? 700 : 400 }}>Bans</a>
 				</Link>
 			</div>
 		</div>
