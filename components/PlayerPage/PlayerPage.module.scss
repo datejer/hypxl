@@ -12,6 +12,16 @@
 	width: 100%;
 	display: flex;
 
+	.left {
+		flex: 1;
+		padding: 0 1em 0 2em;
+	}
+
+	.right {
+		flex: 2;
+		padding: 0 2em 0 1em;
+	}
+
 	@media screen and (max-width: 1080px) {
 		flex-direction: column;
 	}

@@ -42,10 +42,6 @@ export default function Stats({ player }) {
 							: ''
 					}`}
 				>
-					{/* <img
-						src={`https://visage.surgeplay.com/bust/${player.uuid}`}
-						className={styles.bust}
-					/> */}
 					<div className={styles.bust}>
 						<Image
 							src={`https://visage.surgeplay.com/bust/${player.uuid}`}
@@ -55,7 +51,12 @@ export default function Stats({ player }) {
 						/>
 					</div>
 				</span>
-				<Tooltip title={player.uuid} animation="shift" animateFill={false}>
+				<Tooltip
+					title={player.uuid}
+					animation="shift"
+					animateFill={false}
+					arrow="true"
+				>
 					<h1 className={styles.username}>
 						{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}
 					</h1>

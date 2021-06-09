@@ -3,6 +3,7 @@ import { useToasts } from 'react-toast-notifications';
 import { useRouter } from 'next/router';
 import SEO from '../SEO';
 import Stats from '../Stats/Stats';
+import NameHistory from '../NameHistory/NameHistory';
 import Games from '../Games/Games';
 
 import styles from './PlayerPage.module.scss';
@@ -47,8 +48,13 @@ function PlayerPage({ username }) {
 			/>
 
 			<div className={styles.user}>
-				<Stats player={player} />
-				<Games player={player} />
+				<div className={styles.left}>
+					<Stats player={player} />
+					<NameHistory names={player.name_history} />
+				</div>
+				<div className={styles.right}>
+					<Games player={player} />
+				</div>
 			</div>
 		</div>
 	);
