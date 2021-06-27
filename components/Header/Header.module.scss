@@ -4,6 +4,11 @@
 	display: flex;
 	justify-content: center;
 	align-self: center;
+	@media screen and (max-width: 750px) {
+		width: 100%;
+		padding-right: 2em;
+		padding-left: 2em;
+	}
 }
 
 .container {
@@ -12,9 +17,51 @@
 	border-radius: 6px;
 	box-shadow: 0 5px 10px #00000022;
 	overflow: hidden;
+	display: flex;
+	align-items: center;
+	@media screen and (max-width: 750px) {
+		width: 100%;
+		flex-direction: column;
+		padding: 0.75em;
+	}
 }
 
-.container > a {
+.topButtons {
+	display: flex;
+	@media screen and (max-width: 750px) {
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+
+.openTopButtons {
+	@media screen and (max-width: 750px) {
+		margin-bottom: 0.75em;
+	}
+}
+
+.links {
+	display: inline;
+	@media screen and (max-width: 750px) {
+		display: none;
+		text-align: center;
+	}
+}
+
+.openLinks {
+	@media screen and (max-width: 750px) {
+		display: flex;
+		flex-direction: column;
+		.link {
+			margin: 0;
+			&:first-child {
+				padding: 0.75em;
+			}
+		}
+	}
+}
+
+.link {
 	margin-right: 1.5em;
 	border-radius: 5px;
 	padding: 0.75em;
@@ -22,15 +69,15 @@
 	display: inline-block;
 }
 
-.container > a:last-child {
+.link:last-child {
 	margin-right: 0;
 }
 
-.container > a:first-child {
+.link:first-child {
 	padding: 0.5em;
 }
 
-.container > a:hover {
+.link:hover {
 	background: #00000022;
 }
 
@@ -38,4 +85,26 @@
 	height: 64px;
 	vertical-align: middle;
 	display: inline-block;
+	@media screen and (max-width: 750px) {
+		margin-right: 0;
+	}
+}
+
+.burger {
+	display: none;
+	margin-right: 0;
+	width: 64px;
+	height: 64px;
+	user-select: none;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: 750px) {
+		// display: inline-block;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
