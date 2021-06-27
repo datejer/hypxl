@@ -11,6 +11,10 @@
 	height: 100%;
 	width: 100%;
 	display: flex;
+
+	@media only screen and (max-width: 1100px) {
+		flex-direction: column;
+	}
 }
 
 .watchdog {
@@ -21,6 +25,10 @@
 	border-radius: 6px;
 	padding: 2em;
 	height: fit-content;
+
+	@media only screen and (max-width: 1100px) {
+		margin: 0 2em 2em 2em;
+	}
 }
 
 .staff {
@@ -31,6 +39,10 @@
 	border-radius: 6px;
 	padding: 2em;
 	height: fit-content;
+
+	@media only screen and (max-width: 1100px) {
+		margin: 0 2em 2em 2em;
+	}
 }
 
 .title {
@@ -50,16 +62,4 @@
 
 .bold {
 	font-weight: 700;
-}
-
-@media only screen and (max-width: 1100px) {
-	.stats {
-		flex-direction: column;
-	}
-	.watchdog {
-		margin: 0 1em 1em 1em;
-	}
-	.staff {
-		margin: 0 1em 1em 1em;
-	}
 }
