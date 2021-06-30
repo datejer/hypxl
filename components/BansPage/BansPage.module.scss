@@ -54,10 +54,21 @@
 	vertical-align: middle;
 	line-height: 48px;
 	margin-bottom: 1rem;
+
+	@media only screen and (max-width: 600px) {
+		font-size: 24px;
+		text-shadow: 3px 3px #00000022;
+		line-height: 24px;
+		margin-bottom: 0.5rem;
+	}
 }
 
 .info {
 	font-size: 1.5em;
+
+	@media only screen and (max-width: 600px) {
+		font-size: 1em;
+	}
 }
 
 .bold {

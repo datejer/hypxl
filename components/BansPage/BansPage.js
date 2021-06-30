@@ -28,15 +28,15 @@ function BansPage() {
 					<div className={styles.info}>
 						<div>
 							<span className={styles.bold}>Bans in last minute: </span>{' '}
-							{stats.watchdog?.last_minute}
+							{stats.watchdog ? stats.watchdog.last_minute : '...'}
 						</div>
 						<div>
 							<span className={styles.bold}>Bans today: </span>{' '}
-							{stats.watchdog?.daily}
+							{stats.watchdog ? stats.watchdog?.daily : '...'}
 						</div>
 						<div>
 							<span className={styles.bold}>Total bans: </span>{' '}
-							{stats.watchdog?.total}
+							{stats.watchdog ? stats.watchdog?.total : '...'}
 						</div>
 					</div>
 				</div>
@@ -45,11 +45,11 @@ function BansPage() {
 					<div className={styles.info}>
 						<div>
 							<span className={styles.bold}>Bans today: </span>{' '}
-							{stats.staff?.daily}
+							{stats.staff ? stats.staff?.daily : '...'}
 						</div>
 						<div>
 							<span className={styles.bold}>Total bans: </span>{' '}
-							{stats.staff?.total}
+							{stats.staff ? stats.staff?.total : '...'}
 						</div>
 					</div>
 				</div>
