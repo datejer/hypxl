@@ -51,31 +51,33 @@ export default function Stats({ player }) {
 						/>
 					</div>
 				</span>
-				<Tooltip
-					title={player.uuid}
-					animation="shift"
-					animateFill={false}
-					arrow="true"
-				>
-					<h1 className={styles.username}>
-						{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}
-					</h1>
-				</Tooltip>
-				<span style={{ marginLeft: '1em' }}>
+				<div>
 					<Tooltip
-						title={player.online ? 'Online' : 'Offline'}
+						title={player.uuid}
 						animation="shift"
 						animateFill={false}
 						arrow="true"
 					>
-						<span
-							className={styles.indicator}
-							style={{
-								backgroundColor: player.online ? 'lightgreen' : 'orangered',
-							}}
-						></span>
+						<h1 className={styles.username}>
+							{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}
+						</h1>
 					</Tooltip>
-				</span>
+					<span className={styles.indicatorWrapper}>
+						<Tooltip
+							title={player.online ? 'Online' : 'Offline'}
+							animation="shift"
+							animateFill={false}
+							arrow="true"
+						>
+							<span
+								className={styles.indicator}
+								style={{
+									backgroundColor: player.online ? 'lightgreen' : 'orangered',
+								}}
+							></span>
+						</Tooltip>
+					</span>
+				</div>
 			</div>
 			<div className={styles.info}>
 				<div>

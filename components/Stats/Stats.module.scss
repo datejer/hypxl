@@ -5,6 +5,10 @@
 	border-radius: 6px;
 	padding: 2em;
 	height: fit-content;
+
+	@media screen and (max-width: 375px) {
+		padding: 1.5em;
+	}
 }
 
 .player {
@@ -14,6 +18,25 @@
 	flex-direction: row;
 	justify-content: flex-start;
 	align-items: center;
+
+	& > div {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		@media screen and (max-width: 500px) {
+			margin-top: 1em;
+		}
+
+		@media screen and (max-width: 325px) {
+			flex-direction: column;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		flex-direction: column;
+		height: fit-content;
+	}
 }
 
 .bust {
@@ -43,6 +66,10 @@
 		height: 135px;
 		background-repeat: no-repeat;
 	}
+
+	@media screen and (max-width: 500px) {
+		margin-right: 1.2em;
+	}
 }
 
 .username {
@@ -54,6 +81,25 @@
 	margin-top: -0.3em;
 	display: inline-block;
 	vertical-align: middle;
+
+	@media screen and (max-width: 600px) {
+		font-size: 16px;
+		text-shadow: 2px 2px #00000022;
+	}
+
+	@media screen and (max-width: 500px) {
+		display: inline-block;
+		width: max-content;
+	}
+
+	@media screen and (max-width: 425px) {
+		font-size: 14px;
+	}
+
+	@media screen and (max-width: 390px) {
+		width: min-content;
+		text-align: center;
+	}
 }
 
 .indicator {
@@ -64,8 +110,20 @@
 	vertical-align: middle;
 }
 
+.indicatorWrapper {
+	margin-left: 1em;
+
+	@media screen and (max-width: 325px) {
+		margin: 0;
+	}
+}
+
 .info {
 	font-size: 1em;
+
+	@media screen and (max-width: 375px) {
+		font-size: 0.9em;
+	}
 }
 
 .bold {
