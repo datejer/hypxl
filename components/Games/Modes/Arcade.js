@@ -53,7 +53,7 @@ export default function Arcade({ data }) {
 					{formatBigNumber(data.modes.hypixel_says.wins)}
 				</div>
 				<div>
-					<span className={styles.bold}>Kills: </span>{' '}
+					<span className={styles.bold}>Rounds: </span>{' '}
 					{formatBigNumber(data.modes.hypixel_says.rounds)}
 				</div>
 			</div>
@@ -64,7 +64,7 @@ export default function Arcade({ data }) {
 					{formatBigNumber(data.modes.santa_says.wins)}
 				</div>
 				<div>
-					<span className={styles.bold}>Kills: </span>{' '}
+					<span className={styles.bold}>Rounds: </span>{' '}
 					{formatBigNumber(data.modes.santa_says.rounds)}
 				</div>
 			</div>
@@ -83,6 +83,12 @@ export default function Arcade({ data }) {
 					{formatBigNumber(data.modes.miniwalls.deaths)}
 				</div>
 				<div>
+					<span className={styles.bold}>K/D: </span>{' '}
+					{(data.modes.miniwalls.kills / data.modes.miniwalls.deaths).toFixed(
+						2
+					)}
+				</div>
+				<div>
 					<span className={styles.bold}>Final Kills: </span>{' '}
 					{formatBigNumber(data.modes.miniwalls.final_kills)}
 				</div>
@@ -93,6 +99,13 @@ export default function Arcade({ data }) {
 				<div>
 					<span className={styles.bold}>Arrows Hit: </span>{' '}
 					{formatBigNumber(data.modes.miniwalls.arrows_hit)}
+				</div>
+				<div>
+					<span className={styles.bold}>Arrow Hit/Miss: </span>{' '}
+					{(
+						data.modes.miniwalls.arrows_hit /
+						(data.modes.miniwalls.arrows_shot - data.modes.miniwalls.arrows_hit)
+					).toFixed(2)}
 				</div>
 				<div>
 					<span className={styles.bold}>Wither Damage: </span>{' '}
@@ -139,6 +152,12 @@ export default function Arcade({ data }) {
 					<span className={styles.bold}>Deaths: </span>{' '}
 					{formatBigNumber(data.modes.bounty_hunters.deaths)}
 				</div>
+				<div>
+					<span className={styles.bold}>K/D: </span>{' '}
+					{(
+						data.modes.bounty_hunters.kills / data.modes.bounty_hunters.deaths
+					).toFixed(2)}
+				</div>
 			</div>
 			<div>
 				<h2 className={styles.heading}>Galaxy Wars</h2>
@@ -157,6 +176,12 @@ export default function Arcade({ data }) {
 				<div>
 					<span className={styles.bold}>Deaths: </span>{' '}
 					{formatBigNumber(data.modes.galaxy_wars.deaths)}
+				</div>
+				<div>
+					<span className={styles.bold}>K/D: </span>{' '}
+					{(
+						data.modes.galaxy_wars.kills / data.modes.galaxy_wars.deaths
+					).toFixed(2)}
 				</div>
 				<div>
 					<span className={styles.bold}>Shots Fired: </span>{' '}
