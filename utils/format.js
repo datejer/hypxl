@@ -68,16 +68,18 @@ const getHtmlFormat = string => {
 };
 
 const formatBigNumber = number => {
-	return number
-		.toString()
-		.split('')
-		.reverse()
-		.join('')
-		.match(/.{1,3}/g)
-		.join(',')
-		.split('')
-		.reverse()
-		.join('');
+	if (number > 0)
+		return number
+			.toString()
+			.split('')
+			.reverse()
+			.join('')
+			.match(/.{1,3}/g)
+			.join(',')
+			.split('')
+			.reverse()
+			.join('');
+	else return 0;
 };
 
 export { getHexCode, getHtmlFormat, formatBigNumber };
