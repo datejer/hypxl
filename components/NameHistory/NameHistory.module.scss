@@ -1,5 +1,9 @@
 .nameHistory {
 	margin-bottom: 2em;
+
+	& > div > div:last-of-type {
+		padding: 0;
+	}
 }
 
 .list {

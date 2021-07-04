@@ -27,9 +27,17 @@ export default function Game({ name, children }) {
 						/>
 					</svg>
 				)}
-				<h4 className={styles.name}>{name}</h4>
+				<h1 className={styles.name}>{name}</h1>
 			</div>
-			{open ? <div className={styles.contents}>{children}</div> : ''}
+			<div
+				className={styles.contents}
+				style={{
+					display: open ? 'block' : 'none',
+					marginTop: open ? '1em' : '',
+				}}
+			>
+				{children}
+			</div>
 		</div>
 	);
 }

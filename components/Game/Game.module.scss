@@ -6,26 +6,44 @@
 	padding: 1em;
 	height: fit-content;
 
-	.collapse {
-		user-select: none;
-
-		&:hover {
-			cursor: pointer;
-		}
+	* {
+		transition: all 2s ease;
 	}
+}
 
-	.collapseIcon {
-		height: 1em;
-		vertical-align: middle;
-		margin-right: 0.5em;
-	}
+.collapse {
+	user-select: none;
 
-	.name {
-		display: inline;
-		vertical-align: middle;
+	&:hover {
+		cursor: pointer;
 	}
+}
 
-	.contents {
-		margin-top: 1em;
+.collapseIcon {
+	height: 1em;
+	vertical-align: middle;
+	margin-right: 0.5em;
+
+	* {
+		transition: all 0.1s ease;
 	}
+}
+
+.name {
+	display: inline;
+	vertical-align: middle;
+	font-size: 1em;
+
+	// Not sure what to do about this.
+	// That style looks kinda cool but then I'd have to stick to it consistently throughout the whole site,
+	// and I don't think I'm ready for that kind of commitment.
+
+	// text-transform: uppercase;
+	// font-size: 14px;
+	// letter-spacing: -1px;
+}
+
+.contents {
+	transition: all 2s ease;
+	padding: 0 1em 1em 1em;
 }
