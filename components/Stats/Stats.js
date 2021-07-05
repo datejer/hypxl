@@ -149,6 +149,10 @@ export default function Stats({ player }) {
 				) : (
 					''
 				)}
+				<div>
+					<span className={styles.bold}>Last MC version: </span>{' '}
+					{player.mc_version}
+				</div>
 				<br />
 				<div>
 					<span className={styles.bold}>Gifts sent: </span> {player.gifts_sent}
