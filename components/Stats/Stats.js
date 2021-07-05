@@ -1,5 +1,6 @@
 import { Tooltip } from 'react-tippy';
 import Image from 'next/image';
+import { useToasts } from 'react-toast-notifications';
 import { getHtmlFormat, formatBigNumber } from '../../utils/format';
 import { getCoinMultiplier } from '../../utils/multiplier';
 import Socials from '../Socials/Socials';
@@ -7,6 +8,17 @@ import Socials from '../Socials/Socials';
 import styles from './Stats.module.scss';
 
 export default function Stats({ player }) {
+	const { addToast } = useToasts();
+
+	const handleUsernameCopy = () => {
+		navigator.clipboard.writeText(player.uuid);
+
+		addToast('UUID successfully copied to clipboard!', {
+			autoDismiss: true,
+			appearance: 'success',
+		});
+	};
+
 	return (
 		<div className={styles.stats}>
 			<div
@@ -52,16 +64,18 @@ export default function Stats({ player }) {
 					</div>
 				</span>
 				<div>
-					<Tooltip
-						title={player.uuid}
-						animation="shift"
-						animateFill={false}
-						arrow="true"
-					>
-						<h1 className={styles.username}>
-							{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}
-						</h1>
-					</Tooltip>
+					<div onClick={handleUsernameCopy}>
+						<Tooltip
+							title={player.uuid + '<br/>(Click to copy UUID)'}
+							animation="shift"
+							animateFill={false}
+							arrow="true"
+						>
+							<h1 className={styles.username}>
+								{getHtmlFormat(`${player.rank_formatted} ${player.username}`)}
+							</h1>
+						</Tooltip>
+					</div>
 					<span className={styles.indicatorWrapper}>
 						<Tooltip
 							title={player.online ? 'Online' : 'Offline'}
