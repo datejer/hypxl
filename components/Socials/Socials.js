@@ -20,7 +20,14 @@ export default function Socials({ player }) {
 				''
 			)}
 			{player.links.INSTAGRAM ? (
-				<a href={player.links.INSTAGRAM} className={styles.socialLink}>
+				<a
+					href={
+						player.links.INSTAGRAM.startsWith('https://')
+							? player.links.INSTAGRAM
+							: `https://${player.links.INSTAGRAM}`
+					}
+					className={styles.socialLink}
+				>
 					<img src="/social/instagram.svg" className={styles.socialImg} />
 				</a>
 			) : (
