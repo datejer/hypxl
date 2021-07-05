@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout/Layout';
+import Layout from '../../../components/Layout/Layout';
 
 function GuildMember({ username }) {
 	return <Layout current="guild"></Layout>;
