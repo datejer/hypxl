@@ -10,6 +10,7 @@ import styles from './PlayerPage.module.scss';
 
 function PlayerPage({ username }) {
 	const [player, setPlayer] = useState(null);
+	const [nameHistory, setNameHistory] = useState([]);
 	const { addToast } = useToasts();
 	const router = useRouter();
 
@@ -17,13 +18,20 @@ function PlayerPage({ username }) {
 		const res = await fetch(
 			`https://api.slothpixel.me/api/players/${username}`
 		);
+		const res2 = await fetch(
+			`https://api.ashcon.app/mojang/v2/user/${username}`
+		);
 
 		const data = await res.json();
+		const data2 = await res2.json();
 
 		if (data.error) {
 			router.push('/');
 			addToast(data.error, { autoDismiss: true, appearance: 'error' });
-		} else setPlayer(data);
+		} else {
+			setPlayer(data);
+			setNameHistory(data2.username_history.map(el => el.username));
+		}
 	}, []);
 
 	if (!player)
@@ -50,7 +58,11 @@ function PlayerPage({ username }) {
 			<div className={styles.user}>
 				<div className={styles.left}>
 					<Stats player={player} />
-					<NameHistory names={player.name_history} />
+					<NameHistory
+						names={player.name_history}
+						nameHistory={nameHistory}
+						currentName={player.username}
+					/>
 				</div>
 				<div className={styles.right}>
 					<Games player={player} />
