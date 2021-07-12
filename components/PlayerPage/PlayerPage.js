@@ -58,11 +58,7 @@ function PlayerPage({ username }) {
 			<div className={styles.user}>
 				<div className={styles.left}>
 					<Stats player={player} />
-					<NameHistory
-						names={player.name_history}
-						nameHistory={nameHistory}
-						currentName={player.username}
-					/>
+					<NameHistory names={player.name_history} nameHistory={nameHistory} />
 				</div>
 				<div className={styles.right}>
 					<Games player={player} />

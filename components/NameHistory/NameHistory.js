@@ -4,7 +4,7 @@ import Game from '../Game/Game';
 
 import styles from './NameHistory.module.scss';
 
-export default function NameHistory({ names, nameHistory, currentName }) {
+export default function NameHistory({ names, nameHistory }) {
 	return (
 		<div className={styles.nameHistory}>
 			<Game name="Name History">
