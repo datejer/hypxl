@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
-import { useToasts } from 'react-toast-notifications';
-import { useRouter } from 'next/router';
-import SEO from '../SEO';
-import Stats from '../Stats/Stats';
-import NameHistory from '../NameHistory/NameHistory';
-import Games from '../Games/Games';
+import { useState, useEffect } from "react";
+import { useToasts } from "react-toast-notifications";
+import { useRouter } from "next/router";
+import SEO from "../SEO";
+import Stats from "../Stats/Stats";
+import NameHistory from "../NameHistory/NameHistory";
+import Games from "../Games/Games";
+import Loader from "../Loader/Loader";
 
-import styles from './PlayerPage.module.scss';
+import styles from "./PlayerPage.module.scss";
 
 function PlayerPage({ username }) {
 	const [player, setPlayer] = useState(null);
@@ -26,23 +27,24 @@ function PlayerPage({ username }) {
 		const data2 = await res2.json();
 
 		if (data.error) {
-			router.push('/');
-			addToast(data.error, { autoDismiss: true, appearance: 'error' });
+			router.push("/");
+			addToast(data.error, { autoDismiss: true, appearance: "error" });
 		} else {
 			setPlayer(data);
-			setNameHistory(data2.username_history.map(el => el.username));
+			setNameHistory(data2.username_history.map((el) => el.username));
 		}
 	}, []);
 
 	if (!player)
 		return (
-			<div className={styles.container}>
+			<div className={styles.loaderContainer}>
 				<SEO
 					title={username}
 					description={`View ${username}'s stats.`}
 					favicon={`https://minotar.net/avatar/${username}/100.png`}
 					ogimg={`https://minotar.net/bust/${username}/100.png`}
 				/>
+				<Loader size="25px" />
 			</div>
 		);
 

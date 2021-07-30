@@ -1,0 +1,50 @@
+.dotflashing {
+	position: relative;
+	width: 1em;
+	height: 1em;
+	border-radius: 0.5em;
+	background-color: #ffffff;
+	color: #ffffff;
+	animation: dotFlashing 1s infinite linear alternate;
+	animation-delay: 0.5s;
+
+	&::before,
+	&::after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		top: 0;
+	}
+
+	&::before {
+		left: -1.5em;
+		width: 1em;
+		height: 1em;
+		border-radius: 0.5em;
+		background-color: #ffffff;
+		color: #ffffff;
+		animation: dotFlashing 1s infinite alternate;
+		animation-delay: 0s;
+	}
+
+	&::after {
+		left: 1.5em;
+		width: 1em;
+		height: 1em;
+		border-radius: 0.5em;
+		background-color: #ffffff;
+		color: #ffffff;
+		animation: dotFlashing 1s infinite alternate;
+		animation-delay: 1s;
+	}
+}
+
+@keyframes dotFlashing {
+	0% {
+		background-color: #ffffff;
+	}
+	50%,
+	100% {
+		background-color: #ffffff44;
+	}
+}
