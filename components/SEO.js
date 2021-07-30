@@ -1,13 +1,13 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 export default function SEO({ title, description, favicon, ogimg }) {
-	const fullTitle = title ? `${title} – Hypxl` : 'Hypxl';
+	const fullTitle = title ? `${title} – Hypxl` : "Hypxl";
 
-	const fullDescription = description || 'Hypixel statistics lookup. 📊';
+	const fullDescription = description || "Hypixel statistics lookup. 📊";
 
-	const fullIcon = favicon || '/logo.png';
+	const fullIcon = favicon || "/logo.png";
 
-	const fullOGImage = ogimg || 'https://i.imgur.com/9CyqrJc.png';
+	const fullOGImage = ogimg || "https://i.imgur.com/9CyqrJc.png";
 
 	return (
 		<Head>
